@@ -23,4 +23,4 @@ EXPOSE 8501
 
 # Command to run the Streamlit app
 # We use 0.0.0.0 so Render can route external traffic to it
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD sh -c "streamlit run app.py --server.port=${PORT:-8501} --server.address=0.0.0.0"
